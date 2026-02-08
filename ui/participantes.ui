@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogParticipantes</class>
+ <widget class="QDialog" name="DialogParticipantes">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Gestión de Participantes</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(113, 177, 129);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: rgb(1, 107, 97);
+    color: white;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-weight: bold;
+    min-width: 100px;
+}
+QPushButton:hover {
+    background-color: rgb(113, 177, 129);
+}</string>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::StandardButton::Close</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblTitulo">
+     <property name="font">
+      <font>
+       <pointsize>31</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>GESTIÓN DE PARTICIPANTES</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frameContenido">
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_contenido">
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="styleSheet">
+         <string notr="true">QTabWidget::pane {
+	
+background-color: rgb(1, 107, 97);
+
+    border-radius: 10px;
+}
+QTabBar::tab {
+
+background-color: rgb(147, 218, 151);
+    color: white;
+    padding: 10px 20px;
+    margin-right: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: bold;
+    font-size: 12pt;
+}
+QTabBar::tab:selected {
+   	background-color: rgb(1, 107, 97);
+}
+QTabBar::tab:hover {
+   	background-color: rgb(1, 107, 97);
+}</string>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tabJugadores">
+         <attribute name="title">
+          <string>Jugadores</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>15</number>
+          </property>
+          <property name="leftMargin">
+           <number>15</number>
+          </property>
+          <property name="topMargin">
+           <number>15</number>
+          </property>
+          <property name="rightMargin">
+           <number>15</number>
+          </property>
+          <property name="bottomMargin">
+           <number>15</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="lblBuscar">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Buscar:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="txtBuscarJugador">
+              <property name="styleSheet">
+               <string notr="true">QLineEdit {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 10pt;
+}
+QLineEdit:focus {
+    background-color: white;
+    color: black;
+    border: 2px solid #93da97;
+}</string>
+              </property>
+              <property name="placeholderText">
+               <string>Buscar por nombre...</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblFiltroEquipo">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Equipo:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cmbFiltroEquipo">
+              <property name="toolTip">
+               <string>Filtrar por equipo</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QComboBox {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 10pt;
+    min-width: 150px;
+}
+QComboBox:hover {
+    border: 2px solid #93da97;
+}
+QComboBox:focus {
+    background-color: white;
+    color: black;
+    border: 2px solid #93da97;
+}
+QComboBox::drop-down {
+    border: none;
+}
+QComboBox QAbstractItemView {
+    background-color: white;
+    color: black;
+    selection-background-color: #93da97;
+    selection-color: rgb(1, 107, 97);
+}</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>Todos los equipos</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableJugadores">
+            <property name="styleSheet">
+             <string notr="true">QTableWidget {
+    background-color: #93da97;
+    border: none;
+    border-radius: 5px;
+}
+QTableWidget::item {
+    color: black;
+}
+QTableWidget::item:selected {
+    background-color: rgb(113, 177, 129);
+    color: white;
+}
+QHeaderView::section {
+    background-color: rgb(1, 107, 97);
+    color: white;
+    padding: 8px;
+    border: 2px solid #93da97;
+    font-weight: bold;
+}</string>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>ID</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Nombre</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Fecha Nac.</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Curso</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Equipo</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Posición</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Goles</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>T. Amarillas</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>T. Rojas</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="btnNuevoJugador">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>13</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Registrar nuevo jugador</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: rgb(1, 107, 97);
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+}
+QPushButton:hover {
+    background-color: #93da97;
+    color: rgb(1, 107, 97);
+}
+QPushButton:pressed {
+    background-color: rgb(1, 107, 97);
+}</string>
+              </property>
+              <property name="text">
+               <string>Nuevo Jugador</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnEditarJugador">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>13</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Editar jugador seleccionado</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: rgb(1, 107, 97);
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+}
+QPushButton:hover {
+    background-color: #93da97;
+    color: rgb(1, 107, 97);
+}
+QPushButton:pressed {
+    background-color: rgb(1, 107, 97);
+}</string>
+              </property>
+              <property name="text">
+               <string>Editar</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnEliminarJugador">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>13</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Eliminar jugador seleccionado</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: rgb(1, 107, 97);
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+}
+QPushButton:hover {
+    background-color: #93da97;
+    color: rgb(1, 107, 97);
+}
+QPushButton:pressed {
+    background-color: rgb(1, 107, 97);
+}</string>
+              </property>
+              <property name="text">
+               <string>Eliminar</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            
+            <item>
+             <widget class="QPushButton" name="btnExportarJugadores">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>13</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Exportar lista de jugadores a CSV</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+	background-color: rgb(1, 107, 97);
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+}
+QPushButton:hover {
+    background-color: #93da97;
+    color: rgb(1, 107, 97);
+}
+QPushButton:pressed {
+    background-color: rgb(1, 107, 97);
+}</string>
+              </property>
+              <property name="text">
+               <string>Exportar CSV</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tabArbitros">
+         <attribute name="title">
+          <string>Árbitros</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <property name="spacing">
+           <number>15</number>
+          </property>
+          <property name="leftMargin">
+           <number>15</number>
+          </property>
+          <property name="topMargin">
+           <number>15</number>
+          </property>
+          <property name="rightMargin">
+           <number>15</number>
+          </property>
+          <property name="bottomMargin">
+           <number>15</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_buscar">
+            <item>
+             <widget class="QLabel" name="lblBuscarArbitro">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Buscar:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="txtBuscarArbitro">
+              <property name="styleSheet">
+               <string notr="true">QLineEdit {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 10pt;
+}
+QLineEdit:focus {
+    background-color: white;
+    color: black;
+    border: 2px solid #93da97;
+}</string>
+              </property>
+              <property name="placeholderText">
+               <string>Buscar árbitro por nombre...</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableArbitros">
+            <property name="styleSheet">
+             <string notr="true">QTableWidget {
+    background-color: #93da97;
+    border: none;
+    border-radius: 5px;
+}
+QTableWidget::item {
+    color: black;
+}
+QTableWidget::item:selected {
+    background-color: rgb(113, 177, 129);
+    color: white;
+}
+QHeaderView::section {
+    background-color: rgb(1, 107, 97);
+    color: white;
+    padding: 8px;
+    border: 2px solid #93da97;
+    font-weight: bold;
+}</string>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+            <attribute name="horizontalHeaderDefaultSectionSize">
+             <number>158</number>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>ID</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Nombre</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Fecha Nac.</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Curso</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Partidos Arbitrados</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="btnNuevoArbitro">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>13</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Registrar nuevo árbitro</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: rgb(1, 107, 97);
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+}
+QPushButton:hover {
+    background-color: #93da97;
+    color: rgb(1, 107, 97);
+}
+QPushButton:pressed {
+    background-color: rgb(1, 107, 97);
+}</string>
+              </property>
+              <property name="text">
+               <string>Nuevo Árbitro</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnEditarArbitro">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>13</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Editar árbitro seleccionado</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: rgb(1, 107, 97);
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+}
+QPushButton:hover {
+    background-color: #93da97;
+    color: rgb(1, 107, 97);
+}
+QPushButton:pressed {
+    background-color: rgb(1, 107, 97);
+}</string>
+              </property>
+              <property name="text">
+               <string>Editar</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnEliminarArbitro">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>13</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Eliminar árbitro seleccionado</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: rgb(1, 107, 97);
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+}
+QPushButton:hover {
+    background-color: #93da97;
+    color: rgb(1, 107, 97);
+}
+QPushButton:pressed {
+    background-color: rgb(1, 107, 97);
+}</string>
+              </property>
+              <property name="text">
+               <string>Eliminar</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnAsignarPartido">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>13</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Asignar árbitro a un partido</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+  
+	background-color: rgb(1, 107, 97);
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+}
+QPushButton:hover {
+    background-color: #93da97;
+    color: rgb(1, 107, 97);
+}
+QPushButton:pressed {
+    background-color: rgb(1, 107, 97);
+}</string>
+              </property>
+              <property name="text">
+               <string>Asignar a Partido</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>DialogParticipantes</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

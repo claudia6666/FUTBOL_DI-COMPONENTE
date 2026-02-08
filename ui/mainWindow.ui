@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>2782</width>
+    <height>2221</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Gestión de Torneo de Fútbol - Instituto</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(113, 177, 129);
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="lblTitulo">
+      <property name="font">
+       <font>
+        <pointsize>31</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>TORNEO DE FÚTBOL </string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frameContenido">
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="2">
+        <widget class="QPushButton" name="btnEstadisticas">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>120</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Ver estadísticas de goles y tarjetas</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(1, 107, 97);
+
+border: 4px solid #93da97; 
+border-radius:10px; 
+
+</string>
+         </property>
+         <property name="text">
+          <string>Reloj Digital</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/iconos/stats.png</normaloff>../resources/iconos/stats.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="btnClasificacion">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>120</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Ver cuadro de eliminatorias y clasificación</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(1, 107, 97);
+
+border: 4px solid #93da97; 
+border-radius:10px; 
+</string>
+         </property>
+         <property name="text">
+          <string>Clasificación</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/iconos/trophy.png</normaloff>../resources/iconos/trophy.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="btnCalendario">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>120</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Programar y gestionar partidos</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(1, 107, 97);
+
+border: 4px solid #93da97; 
+border-radius:10px; 
+</string>
+         </property>
+         <property name="text">
+          <string>Calendario de Partidos</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/iconos/calendar.png</normaloff>../resources/iconos/calendar.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="btnParticipantes">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>120</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Gestionar jugadores y árbitros</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(1, 107, 97);
+
+border: 4px solid #93da97; 
+border-radius:10px; 
+</string>
+         </property>
+         <property name="text">
+          <string>Gestión de Participantes</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/iconos/players.png</normaloff>../resources/iconos/players.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="btnResultados">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>120</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Registrar resultados, goles y tarjetas</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(1, 107, 97);
+
+border: 4px solid #93da97; 
+border-radius:10px; 
+</string>
+         </property>
+         <property name="text">
+          <string>Actualizar Resultados</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/iconos/results.png</normaloff>../resources/iconos/results.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btnEquipos">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>120</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Crear, editar y eliminar equipos del torneo</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(1, 107, 97);
+
+border: 4px solid #93da97; 
+border-radius:10px; 
+
+</string>
+         </property>
+         <property name="text">
+          <string>Gestión de Equipos</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/iconos/team.png</normaloff>../resources/iconos/team.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QFrame" name="frame_2">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>../resources/img/equipo.jpg</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_3">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>../resources/img/Champ.jpg</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_4">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>../resources/img/entreno.jpg</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAyuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="actionAyuda"/>
+   </widget>
+   <widget class="QMenu" name="menuCreditos">
+    <property name="title">
+     <string>Créditos</string>
+    </property>
+    <addaction name="actionCreditos"/>
+   </widget>
+   <addaction name="menuAyuda"/>
+   <addaction name="menuCreditos"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionExportar">
+   <property name="text">
+    <string>Exportar a CSV</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionAyuda">
+   <property name="text">
+    <string>Ayuda</string>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionCreditos">
+   <property name="text">
+    <string>Créditos</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

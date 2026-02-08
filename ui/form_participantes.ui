@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogFormParticipante</class>
+ <widget class="QDialog" name="DialogFormParticipante">
+
+  
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>560</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>480</width>
+    <height>560</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Formulario de Participante</string>
+  </property>
+
+  
+  <property name="styleSheet">
+   <string notr="true">
+QDialog {
+    background-color: rgb(113, 177, 129);
+}
+
+QLabel#lblTitulo {
+    font-size: 20pt;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(1, 107, 97);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+QPushButton {
+    background-color: rgb(1, 107, 97);
+    color: white;
+    border-radius: 8px;
+    padding: 6px;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background-color: #93da97;
+    color: rgb(1, 107, 97);
+}
+
+QLineEdit, QComboBox, QSpinBox, QDateEdit {
+    border: 2px solid rgb(1,107,97);
+    border-radius: 5px;
+    padding: 4px;
+    background-color: white;
+    color: black;
+}
+
+QGroupBox {
+    color: white;
+    font-weight: bold;
+    border: 2px solid rgb(1,107,97);
+    border-radius: 8px;
+    margin-top: 18px;
+    padding-top: 18px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 5px 12px;
+    background-color: rgb(1,107,97);
+    border-radius: 5px;
+    color: white;
+}
+
+QLabel, QRadioButton {
+    color: white;
+    font-weight: bold;
+}
+   </string>
+  </property>
+
+  
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="leftMargin">
+    <number>12</number>
+   </property>
+   <property name="topMargin">
+    <number>12</number>
+   </property>
+   <property name="rightMargin">
+    <number>12</number>
+   </property>
+   <property name="bottomMargin">
+    <number>12</number>
+   </property>
+
+   
+   <item>
+    <widget class="QLabel" name="lblTitulo">
+     <property name="text">
+      <string>DATOS DEL PARTICIPANTE</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed"/>
+     </property>
+    </widget>
+   </item>
+
+   
+   <item>
+    <widget class="QGroupBox" name="groupDatosPersonales">
+     <property name="title">
+      <string>Datos Personales</string>
+     </property>
+     <layout class="QFormLayout">
+      <property name="horizontalSpacing">
+       <number>10</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>10</number>
+      </property>
+
+      <item row="0" column="0">
+       <widget class="QLabel">
+        <property name="text">
+         <string>Nombre Completo:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="txtNombre"/>
+      </item>
+
+      <item row="1" column="0">
+       <widget class="QLabel">
+        <property name="text">
+         <string>Fecha de Nacimiento:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QDateEdit" name="dateFechaNac">
+        <property name="displayFormat">
+         <string>dd/MM/yyyy</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+
+      <item row="2" column="0">
+       <widget class="QLabel">
+        <property name="text">
+         <string>Curso:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="cmbCurso"/>
+      </item>
+
+     </layout>
+    </widget>
+   </item>
+
+   
+   <item>
+    <widget class="QGroupBox" name="groupRol">
+     <property name="title">
+      <string>Rol</string>
+     </property>
+     <layout class="QVBoxLayout">
+      <item>
+       <widget class="QRadioButton" name="rbJugador">
+        <property name="text">
+         <string>Jugador</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rbArbitro">
+        <property name="text">
+         <string>Árbitro</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+
+   
+   <item>
+    <widget class="QGroupBox" name="groupDatosJugador">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Datos de Jugador</string>
+     </property>
+     <layout class="QFormLayout">
+      <property name="horizontalSpacing">
+       <number>10</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>10</number>
+      </property>
+
+      <item row="0" column="0">
+       <widget class="QLabel">
+        <property name="text">
+         <string>Equipo:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="cmbEquipo"/>
+      </item>
+
+      <item row="1" column="0">
+       <widget class="QLabel">
+        <property name="text">
+         <string>Posición:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="cmbPosicion"/>
+      </item>
+
+      <item row="2" column="0">
+       <widget class="QLabel">
+        <property name="text">
+         <string>Goles:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QSpinBox" name="spinGoles">
+        <property name="maximum">
+         <number>200</number>
+        </property>
+       </widget>
+      </item>
+
+      <item row="3" column="0">
+       <widget class="QLabel">
+        <property name="text">
+         <string>Tarjetas Amarillas:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QSpinBox" name="spinTarjetasAmarillas">
+        <property name="maximum">
+         <number>50</number>
+        </property>
+       </widget>
+      </item>
+
+      <item row="4" column="0">
+       <widget class="QLabel">
+        <property name="text">
+         <string>Tarjetas Rojas:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QSpinBox" name="spinTarjetasRojas">
+        <property name="maximum">
+         <number>50</number>
+        </property>
+       </widget>
+      </item>
+
+     </layout>
+    </widget>
+   </item>
+
+   
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+
+ 
+ <connections>
+  <connection>
+   <sender>rbJugador</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupDatosJugador</receiver>
+   <slot>setEnabled(bool)</slot>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogFormArbitro</class>
+ <widget class="QDialog" name="DialogFormArbitro">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Formulario de Árbitro</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(113, 177, 129);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="lblTitulo">
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Registro de Árbitro</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBoxDatos">
+     <property name="title">
+      <string>Datos del Árbitro</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox {
+    color: white;
+    border: 2px solid rgb(1, 107, 97);
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 3px 0 3px;
+}</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <property name="spacing">
+       <number>15</number>
+      </property>
+      <property name="leftMargin">
+       <number>15</number>
+      </property>
+      <property name="topMargin">
+       <number>15</number>
+      </property>
+      <property name="rightMargin">
+       <number>15</number>
+      </property>
+      <property name="bottomMargin">
+       <number>15</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lblNombre">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: white;</string>
+        </property>
+        <property name="text">
+         <string>Nombre:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="txtNombre">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 10pt;
+}
+QLineEdit:focus {
+    background-color: white;
+    color: black;
+    border: 2px solid #93da97;
+}</string>
+        </property>
+        <property name="placeholderText">
+         <string>Nombre completo</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lblFechaNac">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: white;</string>
+        </property>
+        <property name="text">
+         <string>Fecha de Nacimiento:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QDateEdit" name="dateFechaNac">
+        <property name="styleSheet">
+         <string notr="true">QDateEdit {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 10pt;
+}
+QDateEdit:focus {
+    background-color: white;
+    color: black;
+    border: 2px solid #93da97;
+}</string>
+        </property>
+        <property name="calendarPopupEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lblCurso">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: white;</string>
+        </property>
+        <property name="text">
+         <string>Curso:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="cmbCurso">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 10pt;
+}
+QComboBox:focus {
+    background-color: white;
+    color: black;
+    border: 2px solid #93da97;
+}
+QComboBox::drop-down {
+    border: none;
+}
+QComboBox QAbstractItemView {
+    background-color: white;
+    color: black;
+    selection-background-color: #93da97;
+    selection-color: rgb(1, 107, 97);
+}</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>-- Seleccionar --</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>1º DAM</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2º DAM</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>1º ASIR</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2º ASIR</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: rgb(1, 107, 97);
+    color: white;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-weight: bold;
+    min-width: 80px;
+}
+QPushButton:hover {
+    background-color: #93da97;
+    color: rgb(1, 107, 97);
+}
+QPushButton:pressed {
+    background-color: rgb(1, 107, 97);
+}</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>DialogFormArbitro</receiver>
+   <slot>accept()</slot>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>DialogFormArbitro</receiver>
+   <slot>reject()</slot>
+  </connection>
+ </connections>
+</ui>

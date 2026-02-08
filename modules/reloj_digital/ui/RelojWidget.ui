@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DigitalClockWidget</class>
+ <widget class="QWidget" name="DigitalClockWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>611</width>
+    <height>198</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Digital Clock</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#DigitalClockWidget {
+    background-color: rgb(20, 80, 60);
+    border-radius: 10px;
+}
+
+QLCDNumber {
+    background-color: rgb(10, 60, 50);
+    color: #7fff7f;
+    border: 3px solid #00ff00;
+    border-radius: 5px;
+}
+
+QPushButton {
+    background-color: #93da97;
+    color: rgb(1, 107, 97);
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+QPushButton:hover {
+    background-color: #a8e8ac;
+}
+
+QPushButton:pressed {
+    background-color: #7ec582;
+}
+
+QPushButton:disabled {
+    background-color: #5a7a5c;
+    color: #3a5a4c;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>15</number>
+   </property>
+   <property name="bottomMargin">
+    <number>15</number>
+   </property>
+   <item>
+    <widget class="QLCDNumber" name="lcdDisplay">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-color: rgb(133, 255, 137);</string>
+     </property>
+     <property name="digitCount">
+      <number>8</number>
+     </property>
+     <property name="segmentStyle">
+      <enum>QLCDNumber::SegmentStyle::Flat</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="controlsLayout">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="btnStart">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(60, 255, 106);
+color: rgb(10, 60, 50);
+border-color: rgb(10, 60, 50);</string>
+       </property>
+       <property name="text">
+        <string>Start</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnPause">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Pause</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnReset">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(60, 255, 106);
+color: rgb(10, 60, 50);
+border-color: rgb(10, 60, 50);</string>
+       </property>
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

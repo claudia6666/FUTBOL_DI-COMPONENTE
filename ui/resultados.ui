@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogResultados</class>
+ <widget class="QDialog" name="DialogResultados">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Actualización de Resultados</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(113, 177, 129);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="font">
+      <font>
+       <pointsize>23</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background-color: rgb(1, 107, 97);
+color: white;
+border-radius: 8px;
+padding: 8px 20px;
+font-weight: bold;
+min-width: 100px;
+}
+QPushButton:hover {
+background-color: rgb(113, 177, 129);
+}</string>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::StandardButton::Close</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblTitulo">
+     <property name="font">
+      <font>
+       <pointsize>28</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>ACTUALIZACIÓN DE RESULTADOS</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidgetResultados">
+     <property name="styleSheet">
+      <string notr="true">QTabWidget::pane {
+	
+background-color: rgb(1, 107, 97);
+
+    border-radius: 10px;
+}
+QTabBar::tab {
+
+background-color: rgb(147, 218, 151);
+    color: white;
+    padding: 10px 20px;
+    margin-right: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: bold;
+    font-size: 12pt;
+}
+QTabBar::tab:selected {
+   	background-color: rgb(1, 107, 97);
+}
+QTabBar::tab:hover {
+   	background-color: rgb(1, 107, 97);
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="tabPartidos">
+      <attribute name="title">
+       <string>Partidos</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayoutPartidos">
+       <item>
+        <widget class="QTreeWidget" name="treePartidos">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QTreeWidget {background-color:#93da97; border-radius:5px;}
+QTreeWidget::item:selected {background-color: rgb(1,107,97); color:white;}
+QHeaderView::section {background-color: rgb(1,107,97); color:white; font-weight:bold; padding:5px;}
+          </string>
+         </property>
+         <property name="allColumnsShowFocus">
+          <bool>false</bool>
+         </property>
+         <attribute name="headerCascadingSectionResizes">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="headerDefaultSectionSize">
+          <number>182</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Partido</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Goles Equipo 1</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Goles Equipo 2</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Árbitro</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Eliminatoria</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayoutBotonesPartidos">
+         <item>
+          <widget class="QPushButton" name="btnActualizarResultado">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(1,107,97); color:white; border-radius:8px; padding:8px;</string>
+           </property>
+           <property name="text">
+            <string>Actualizar Resultado</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnEditarPartido">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(1,107,97); color:white; border-radius:8px; padding:8px;</string>
+           </property>
+           <property name="text">
+            <string>Editar</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnEliminarPartido">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(1,107,97); color:white; border-radius:8px; padding:8px;</string>
+           </property>
+           <property name="text">
+            <string>Eliminar</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabJugadores">
+      <attribute name="title">
+       <string>Jugadores</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayoutJugadores">
+       <item>
+        <widget class="QTableWidget" name="tableJugadores">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QTableWidget {background-color:#93da97; border-radius:5px;}
+QTableWidget::item:selected {background-color: rgb(1,107,97); color:white;}
+QHeaderView::section {background-color: rgb(1,107,97); color:white; font-weight:bold; padding:5px;}
+          </string>
+         </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>150</number>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>ID</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Nombre</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Equipo</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Goles</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>T. Amarillas</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>T. Rojas</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayoutBotonesJugadores">
+         <item>
+          <widget class="QPushButton" name="btnRegistrarGolesTarjetas">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(1,107,97); color:white; border-radius:8px; padding:8px;</string>
+           </property>
+           <property name="text">
+            <string>Registrar Goles/Tarjetas</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnEditarJugador">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(1,107,97); color:white; border-radius:8px; padding:8px;</string>
+           </property>
+           <property name="text">
+            <string>Editar</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnEliminarJugador">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(1,107,97); color:white; border-radius:8px; padding:8px;</string>
+           </property>
+           <property name="text">
+            <string>Eliminar</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabClasificacion">
+      <attribute name="title">
+       <string>Clasificación</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayoutClasificacion">
+       <item>
+        <widget class="QTreeWidget" name="treeClasificacion">
+         <property name="styleSheet">
+          <string notr="true">
+QTreeWidget {background-color:#93da97; border-radius:5px;}
+QTreeWidget::item:selected {background-color: rgb(1,107,97); color:white;}
+QHeaderView::section {background-color: rgb(1,107,97); color:white; font-weight:bold; padding:5px;}
+          </string>
+         </property>
+         <attribute name="headerDefaultSectionSize">
+          <number>226</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Equipo/Jugador</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Goles</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>T. Amarillas</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>T. Rojas</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

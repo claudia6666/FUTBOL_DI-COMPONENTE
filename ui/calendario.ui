@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogCalendario</class>
+ <widget class="QDialog" name="DialogCalendario">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Gestión del Calendario</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(113, 177, 129);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="font">
+      <font>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: rgb(1, 107, 97);
+    color: white;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-weight: bold;
+    min-width: 100px;
+}
+QPushButton:hover {
+    background-color: rgb(113, 177, 129);
+}</string>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::StandardButton::Close</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblTitulo">
+     <property name="font">
+      <font>
+       <pointsize>28</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>GESTIÓN DEL CALENDARIO</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frameContenido">
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_contenido">
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="styleSheet">
+         <string notr="true">QTabWidget::pane {
+    background-color: rgb(1, 107, 97);
+    border-radius: 10px;
+}
+QTabBar::tab {
+    background-color: rgb(113, 177, 129);
+    color: white;
+    padding: 10px 20px;
+    margin-right: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: bold;
+    font-size: 12pt;
+}
+QTabBar::tab:selected {
+    background-color: rgb(1, 107, 97);
+}
+QTabBar::tab:hover {
+    background-color: #93da97;
+    color: rgb(1, 107, 97);
+}</string>
+        </property>
+        <widget class="QWidget" name="tabPartidos">
+         <attribute name="title">
+          <string>Partidos</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayoutPartidos">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayoutFiltros">
+            <item>
+             <widget class="QLabel" name="lblEquipo1">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Equipo 1:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cmbEquipo1">
+              <property name="styleSheet">
+               <string notr="true">QComboBox {background-color:white; border-radius:5px; padding:5px; color:black;}</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblEquipo2">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: white;</string>
+              </property>
+              <property name="text">
+               <string>Equipo 2:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cmbEquipo2">
+              <property name="styleSheet">
+               <string notr="true">QComboBox {background-color:white; border-radius:5px; padding:5px; color:black;}</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblArbitro">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color:white
+;</string>
+              </property>
+              <property name="text">
+               <string>Árbitro:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cmbArbitro">
+              <property name="styleSheet">
+               <string notr="true">QComboBox {background-color:white; border-radius:5px; padding:5px; color:black;}
+</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblFecha">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color:white
+;</string>
+              </property>
+              <property name="text">
+               <string>Fecha y Hora:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDateTimeEdit" name="dtFechaHora">
+              <property name="styleSheet">
+               <string notr="true">QDateTimeEdit {background-color:white; border-radius:5px; padding:5px; color:black;}</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblEliminatoria">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color:white
+;</string>
+              </property>
+              <property name="text">
+               <string>Eliminatoria:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cmbEliminatoria">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QComboBox {background-color:white; border-radius:5px; padding:5px; color:black;}
+</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>Todos</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octavos</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Cuartos</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Semifinal</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Final</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTreeWidget" name="treePartidos">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LayoutDirection::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QTreeWidget {background-color:#93da97; border-radius:5px;} QTreeWidget::item:selected {background-color: rgb(1,107,97); color:white;} QHeaderView::section {background-color: rgb(1,107,97); color:white; font-weight:bold; padding:5px;}
+
+QHeaderView::section {
+    background-color: rgb(1, 107, 97);
+    color: black;
+    padding: 8px;
+    border: 2px solid #93da97;
+    font-weight: bold;
+    qproperty-alignment: AlignCenter; /* CENTRA el texto */
+}
+
+ qproperty-alignment: AlignCenter; /* CENTRA el texto */</string>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <attribute name="headerDefaultSectionSize">
+             <number>315</number>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>Partido</string>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+               <stylestrategy>PreferAntialias</stylestrategy>
+              </font>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Fecha y Hora</string>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Árbitro</string>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayoutBotones">
+            <item>
+             <widget class="QPushButton" name="btnNuevoPartido">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(1, 107, 97);</string>
+              </property>
+              <property name="text">
+               <string>Nuevo Partido</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnEditarPartido">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(1, 107, 97);</string>
+              </property>
+              <property name="text">
+               <string>Editar</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnEliminarPartido">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(1, 107, 97);</string>
+              </property>
+              <property name="text">
+               <string>Eliminar</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>DialogCalendario</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
